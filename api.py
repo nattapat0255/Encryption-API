@@ -15,7 +15,7 @@ def encrypt():
       data['data'][i] = {"encrpyted" : encrypt_data}
     return jsonify(data)
   except:
-    return jsonify({"message": "Bad Reqest, please try again."})
+    return jsonify({"message": "Something went wrong, please try again."}),400
 
 @app.route('/decrypt', methods=['POST'])
 def decrypt():
@@ -27,4 +27,4 @@ def decrypt():
       data['data'][i] = {"text" : decrypt_data}
     return jsonify(data)
   except:
-    return jsonify({"message": "Bad Reqest, please try again."})
+    return jsonify({"message": "Something went wrong, please try again."}),400
